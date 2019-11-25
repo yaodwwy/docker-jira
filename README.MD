@@ -12,3 +12,7 @@
 > 插件破解文件
     
     atlassian-universal-plugin-manager-plugin-4.0.8.jar
+    
+> Git插件
+
+    jira_git_plugin-3.4.1.4.jar

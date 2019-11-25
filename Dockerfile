@@ -1,4 +1,5 @@
 FROM openjdk:8-alpine
+MAINTAINER adam<yaodwwy@gmail.com>
 
 ENV JIRA_HOME     /var/atlassian/jira
 ENV JIRA_INSTALL  /opt/atlassian/jira
