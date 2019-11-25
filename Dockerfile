@@ -4,8 +4,6 @@ ENV JIRA_HOME     /var/atlassian/jira
 ENV JIRA_INSTALL  /opt/atlassian/jira
 ENV WEB_INF       /opt/atlassian/jira/atlassian-jira/WEB-INF
 
-COPY atlassian-jira-software-8.5.1.tar.gz /
-
 RUN set -x \
     && echo "https://mirrors.aliyun.com/alpine/v3.8/main" > /etc/apk/repositories \
     && echo "https://mirrors.aliyun.com/alpine/v3.8/community" >> /etc/apk/repositories \
