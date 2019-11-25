@@ -11,19 +11,19 @@ RUN set -x \
     && echo "https://mirrors.aliyun.com/alpine/v3.8/community" >> /etc/apk/repositories \
 	&& ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && apk add --no-cache curl xmlstarlet bash ttf-dejavu libc6-compat \
-    && mkdir -p                "${JIRA_HOME}" \
-    && mkdir -p                "${JIRA_HOME}/caches/indexes" \
-    && chmod -R 700            "${JIRA_HOME}" \
-    && mkdir -p                "${JIRA_INSTALL}/conf/Catalina" \
-    && tar -zxf /atlassian-jira-software-8.5.1.tar.gz --directory "${JIRA_INSTALL}" --strip-components=1 --no-same-owner \
-    && rm -rf /atlassian-jira-software-8.5.1.tar.gz \
-    && chmod -R 700            "${JIRA_INSTALL}/conf" \
-    && chmod -R 700            "${JIRA_INSTALL}/logs" \
-    && chmod -R 700            "${JIRA_INSTALL}/temp" \
-    && chmod -R 700            "${JIRA_INSTALL}/work" \
-    && sed --in-place          "s/java version/openjdk version/g" "${JIRA_INSTALL}/bin/check-java.sh" \
-    && echo -e                 "\njira.home=$JIRA_HOME" >> "${WEB_INF}/classes/jira-application.properties" \
-    && touch -d "@0"           "${JIRA_INSTALL}/conf/server.xml"
+    && mkdir -p          "${JIRA_HOME}" \
+    && mkdir -p          "${JIRA_HOME}/caches/indexes" \
+    && chmod -R 700      "${JIRA_HOME}" \
+    && mkdir -p          "${JIRA_INSTALL}/conf/Catalina" \
+    && curl -Ls          "https://product-downloads.atlassian.com/software/jira/downloads/atlassian-jira-software-8.5.1.tar.gz" | tar -xz --directory "${JIRA_INSTALL}" --strip-components=1 --no-same-owner \
+    && rm   -rf          "${JIRA_INSTALL}/atlassian-jira-software-8.5.1.tar.gz" \
+    && chmod -R 700      "${JIRA_INSTALL}/conf" \
+    && chmod -R 700      "${JIRA_INSTALL}/logs" \
+    && chmod -R 700      "${JIRA_INSTALL}/temp" \
+    && chmod -R 700      "${JIRA_INSTALL}/work" \
+    && sed --in-place    "s/java version/openjdk version/g" "${JIRA_INSTALL}/bin/check-java.sh" \
+    && echo -e           "\njira.home=$JIRA_HOME" >> "${WEB_INF}/classes/jira-application.properties" \
+    && touch -d "@0"     "${JIRA_INSTALL}/conf/server.xml"
 
 EXPOSE 8080
 
