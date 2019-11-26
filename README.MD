@@ -16,3 +16,23 @@
 > Git插件
 
     jira_git_plugin-3.4.1.4.jar
+
+> jira推荐挂载方式：
+    
+      # 用户头像(avatars) 附件(attachments) 插件(git-plugin)
+    - mountPath: /var/jira/data
+      name: jira
+      subPath: jira/data
+      
+      # 系统备份输出目录
+    - mountPath: /var/jira/export
+      name: jira
+      subPath: jira/export
+      
+      # 系统备份导入目录
+    - mountPath: /var/jira/import
+      name: jira
+      subPath: jira/import
+
+      # Lucene搜索索引不支持NFS挂载，因为已知NFS挂载会导致您的应用程序出现稳定性问题。
+        不推荐搜索索引目录/var/jira/caches/indexesV1挂载在nfs。
