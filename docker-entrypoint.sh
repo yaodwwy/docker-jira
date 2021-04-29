@@ -1,5 +1,7 @@
 #!/bin/bash
 
+xmlstarlet ed --inplace --pf --ps --update '//url' --value "${DATASOURCE_URL}" "${JIRA_HOME}/dbconfig.xml"
+
 if [ "$(stat -c "%Y" "${JIRA_INSTALL}/conf/server.xml")" -eq "0" ]; then
   if [ -n "${X_PROXY_NAME}" ]; then
     xmlstarlet ed --inplace --pf --ps --insert '//Connector[@port="8080"]' --type "attr" --name "proxyName" --value "${X_PROXY_NAME}" "${JIRA_INSTALL}/conf/server.xml"

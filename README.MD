@@ -1,9 +1,9 @@
 
-### 基于jira8.5.1版本
+### 基于jira8.14.1版本
 
 > 主程序包下载地址:
 
-    https://product-downloads.atlassian.com/software/jira/downloads/atlassian-jira-software-8.5.1.tar.gz
+    https://product-downloads.atlassian.com/software/jira/downloads/atlassian-jira-software-8.14.1.tar.gz
 
 > 主程序破解文件
     
