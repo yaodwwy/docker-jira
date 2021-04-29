@@ -1,1 +1,0 @@
-curl -O https://product-downloads.atlassian.com/software/jira/downloads/atlassian-jira-software-8.14.1.tar.gz
